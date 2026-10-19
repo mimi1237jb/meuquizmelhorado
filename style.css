@@ -1,0 +1,381 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --fundo: #11152b;
+    --painel: #1c2140;
+    --roxo: #9575ff;
+    --texto: #f7f7ff;
+    --suave: #a6accb;
+    --verde: #43d9a3;
+    --vermelho: #ff7185;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at top, #292052 0%, transparent 55%),
+        var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: 100%;
+    max-width: 620px;
+    background: rgba(28, 33, 64, 0.96);
+    border: 1px solid #343858;
+    border-radius: 25px;
+    padding: 32px;
+    box-shadow: 0 25px 80px #0005;
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #353956;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.som {
+    background: #292e50;
+    border: 1px solid #41466b;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tela {
+    animation: aparecer 0.35s ease;
+}
+
+.oculto {
+    display: none !important;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.emoji-principal {
+    font-size: 54px;
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.etiqueta {
+    text-align: center;
+    color: var(--roxo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(25px, 5vw, 35px);
+    text-align: center;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.descricao {
+    color: var(--suave);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.detalhes div {
+    background: #252a4a;
+    border: 1px solid #383e60;
+    padding: 15px 6px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 18px;
+}
+
+.detalhes strong {
+    font-size: 17px;
+}
+
+.detalhes span {
+    font-size: 10px;
+    color: var(--suave);
+    text-align: center;
+}
+
+.principal {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 13px;
+    color: white;
+    background: linear-gradient(100deg, #7957ed, #a17bff);
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.principal:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.principal:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.principal span {
+    margin-left: 8px;
+}
+
+.rodape {
+    text-align: center;
+    color: var(--suave);
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.informacoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--suave);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#pontuacao {
+    color: #ffd479;
+}
+
+.barra-fundo,
+.tempo-fundo {
+    height: 8px;
+    background: #303553;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra-fundo {
+    margin: 15px 0 25px;
+}
+
+.barra,
+.barra-tempo {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.3s;
+}
+
+.barra {
+    background: linear-gradient(90deg, #7957ed, #b69aff);
+}
+
+.tempo-area {
+    display: flex;
+    justify-content: space-between;
+    color: var(--suave);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+#tempo {
+    color: var(--verde);
+    font-size: 15px;
+}
+
+.tempo-fundo {
+    margin-bottom: 27px;
+}
+
+.barra-tempo {
+    width: 100%;
+    background: var(--verde);
+    transition: width 1s linear, background 0.3s;
+}
+
+#pergunta {
+    font-size: clamp(20px, 4vw, 25px);
+    line-height: 1.45;
+    margin-bottom: 22px;
+}
+
+.alternativas {
+    display: grid;
+    gap: 12px;
+}
+
+.alternativa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    background: #252a4a;
+    color: var(--texto);
+    border: 1px solid #3b4163;
+    border-radius: 13px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.letra {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: #373c60;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.alternativa:hover:not(:disabled) {
+    border-color: var(--roxo);
+    background: #302950;
+    transform: translateX(3px);
+}
+
+.alternativa:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.alternativa.correta {
+    border-color: var(--verde);
+    background: #173d3a;
+}
+
+.alternativa.correta .letra {
+    background: var(--verde);
+    color: #10251f;
+}
+
+.alternativa.errada {
+    border-color: var(--vermelho);
+    background: #472635;
+}
+
+.alternativa.errada .letra {
+    background: var(--vermelho);
+    color: #35121b;
+}
+
+#feedback {
+    min-height: 44px;
+    margin: 17px 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--suave);
+}
+
+#proxima {
+    margin-top: 5px;
+}
+
+.placar {
+    padding: 22px;
+    background: #252a4a;
+    border: 1px solid #383e60;
+    border-radius: 16px;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--suave);
+    font-size: 13px;
+}
+
+.placar strong {
+    display: block;
+    font-size: 48px;
+    color: var(--roxo);
+    margin: 12px 0;
+}
+
+.placar .barra-fundo {
+    margin: 20px 0;
+}
+
+#estatisticas {
+    line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 22px 17px;
+        border-radius: 20px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .detalhes span {
+        font-size: 9px;
+    }
+
+    .alternativa {
+        padding: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

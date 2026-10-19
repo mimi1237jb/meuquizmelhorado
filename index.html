@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11152b">
+    <title>Quiz Master | Conhecimentos Gerais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="topo">
+            <div class="logo">🧠 Quiz Master</div>
+            <button id="som" class="som" aria-label="Ativar ou desativar som">
+                🔊 Som ligado
+            </button>
+        </header>
+
+        <section id="inicio" class="tela">
+            <div class="emoji-principal">🎯</div>
+            <p class="etiqueta">DESAFIE SUA MENTE</p>
+            <h1>Você consegue acertar as 10?</h1>
+            <p class="descricao">
+                Teste seus conhecimentos gerais, acumule pontos
+                e descubra seu resultado!
+            </p>
+
+            <div class="detalhes">
+                <div>📝 <strong>10</strong><span>Perguntas</span></div>
+                <div>⏱️ <strong>15s</strong><span>Por pergunta</span></div>
+                <div>🏆 <strong>100</strong><span>Pontos possíveis</span></div>
+            </div>
+
+            <button id="comecar" class="principal">
+                Começar desafio <span>→</span>
+            </button>
+
+            <p class="rodape">Prepare-se e boa sorte!</p>
+        </section>
+
+        <section id="jogo" class="tela oculto">
+            <div class="informacoes">
+                <span id="numero">PERGUNTA 1/10</span>
+                <span id="pontuacao">⭐ 0 pontos</span>
+            </div>
+
+            <div class="barra-fundo">
+                <div id="barra" class="barra"></div>
+            </div>
+
+            <div class="tempo-area">
+                <span>⏱️ Tempo restante</span>
+                <strong id="tempo">15s</strong>
+            </div>
+
+            <div class="tempo-fundo">
+                <div id="barraTempo" class="barra-tempo"></div>
+            </div>
+
+            <h2 id="pergunta">Carregando pergunta...</h2>
+
+            <div id="alternativas" class="alternativas"></div>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <button id="proxima" class="principal" disabled>
+                Próxima pergunta →
+            </button>
+        </section>
+
+        <section id="resultado" class="tela oculto">
+            <div id="emojiResultado" class="emoji-principal">🏆</div>
+            <p class="etiqueta">DESAFIO FINALIZADO</p>
+            <h1 id="tituloResultado">Parabéns!</h1>
+            <p class="descricao" id="mensagem"></p>
+
+            <div class="placar">
+                <span>Sua pontuação</span>
+                <strong id="nota">0/100</strong>
+                <div class="barra-fundo">
+                    <div id="barraFinal" class="barra"></div>
+                </div>
+                <p id="estatisticas"></p>
+            </div>
+
+            <button id="reiniciar" class="principal">
+                ↻ Jogar novamente
+            </button>
+        </section>
+
+    </main>
+
+</body>
+</html>
